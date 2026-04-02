@@ -68,4 +68,14 @@ Part Studio open hood
 **This was the coolest thing I learned how to do in OnShape!!!*
 
 ## Physical build
-Gotta wait for the approval!!!!!!!
+
+# Planning
+First off, I'm gonna 3D print the main chassis, wheel guards, and motor mounts. This way, I'll have an idea of what the whole thing looks like.
+
+After I have those, I'll put the heat-set inserts into the chassis, then mount the motors and the wheels.
+
+I'll wire up all the Radio and BLDC electronics, then solder the Arduino and TB6612FNG together and cram them into the itty chassis. Once I have that, I should have movement!!!
+
+Once I confirm that the chassis is good and can move well, I get to machining the aluminum! I have some plates on hand that I can mark and cut using my FRC team's miter saw and dremel. Ill also print the weapon parts.
+
+Once everythign has been put together, it should be fantastic!
