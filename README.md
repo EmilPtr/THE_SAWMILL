@@ -79,3 +79,21 @@ I'll wire up all the Radio and BLDC electronics, then solder the Arduino and TB6
 Once I confirm that the chassis is good and can move well, I get to machining the aluminum! I have some plates on hand that I can mark and cut using my FRC team's miter saw and dremel. I'll also print the weapon parts.
 
 Once everything has been put together, it should be fantastic!
+
+## BOM
+| Item Name       | Amount Needed | Cost to Me | On Hand |
+|-----------------|---------------|------------|---------|
+| PLA Plastic     | ~200g         | $0.00      | Yes     |
+| Aluminum Sheet  | 1 Small Sheet | $0.00      | Yes     |
+| M4 Hardware     | ~10 Sets      | $0.00      | Yes     |
+| M2 Hardware     | ~4 Sets       | $0.00      | Yes     |
+| Arduino Nano    | 1             | $0.00      | Yes     |
+| TB6612FNG       | 2             | $0.00      | Yes     |
+| Assorted Wires  | Indeterminate | $0.00      | Yes     |
+| Wheels          | 2             | $0.00      | Yes     |
+| M3 Hardware     | ~2 Sets       | $0.00      | Yes     |
+| 2S LiPo Battery | 1             | $0.00      | Yes     |
+| N20 DC Motor    | 2             | $0.00      | Yes     |
+| BLDC ESC        | 1             | $0.00      | Yes     |
+| Radio RX        | 1             | $0.00      | Yes     |
+| 2200KV BLDC     | 1             | $0.00      | Yes     |
