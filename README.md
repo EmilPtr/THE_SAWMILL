@@ -81,19 +81,20 @@ Once I confirm that the chassis is good and can move well, I get to machining th
 Once everything has been put together, it should be fantastic!
 
 ## BOM
-| Item Name       | Amount Needed | Cost to Me | On Hand |
-|-----------------|---------------|------------|---------|
-| PLA Plastic     | ~200g         | $0.00      | Yes     |
-| Aluminum Sheet  | 1 Small Sheet | $0.00      | Yes     |
-| M4 Hardware     | ~10 Sets      | $0.00      | Yes     |
-| M2 Hardware     | ~4 Sets       | $0.00      | Yes     |
-| Arduino Nano    | 1             | $0.00      | Yes     |
-| TB6612FNG       | 2             | $0.00      | Yes     |
-| Assorted Wires  | Indeterminate | $0.00      | Yes     |
-| Wheels          | 2             | $0.00      | Yes     |
-| M3 Hardware     | ~2 Sets       | $0.00      | Yes     |
-| 2S LiPo Battery | 1             | $0.00      | Yes     |
-| N20 DC Motor    | 2             | $0.00      | Yes     |
-| BLDC ESC        | 1             | $0.00      | Yes     |
-| Radio RX        | 1             | $0.00      | Yes     |
-| 2200KV BLDC     | 1             | $0.00      | Yes     |
+| Item Name       | Amount Needed | Cost to Me (USD) | On Hand |
+|-----------------|---------------|------------------|---------|
+| PLA Plastic     | ~200g         | $0.00            | Yes     |
+| Aluminum Sheet  | 1 Small Sheet | $11.00           | No      |
+| M4 Hardware     | ~10 Sets      | $0.00            | Yes     |
+| M2 Hardware     | ~4 Sets       | $6.00            | No      |
+| Arduino Nano    | 1             | $13.00           | No      |
+| TB6612FNG       | 2             | $0.00            | Yes     |
+| Assorted Wires  | Indeterminate | $0.00            | Yes     |
+| Wheels          | 2             | $0.00            | Yes     |
+| M3 Hardware     | ~2 Sets       | $6.00            | No      |
+| 2S LiPo Battery | 1             | $0.00            | Yes     |
+| N20 DC Motor    | 2             | $0.00            | Yes     |
+| BLDC ESC        | 1             | $0.00            | Yes     |
+| Radio RX        | 1             | $0.00            | Yes     |
+| 2200KV BLDC     | 1             | $0.00            | Yes     |
+| Total           |               | $36.00           |         |
