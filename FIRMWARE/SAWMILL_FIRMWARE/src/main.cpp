@@ -1,54 +1,68 @@
 #include <Arduino.h>
 
-#define LAT_CH2 5
-#define TURN_CH1 6
-#define R_DIR 7
-#define R_PWM 8
-#define L_DIR 9
-#define L_PWM 10
+// INPUTS (FS-R6B)
+#define TURN_CH1 6   // Receiver CH1
+#define FWD_CH2 7    // Receiver CH2
+
+// OUTPUTS (TB6612FNG)
+#define R_DIR A1
+#define R_PWM 3  
+#define L_DIR A4
+#define L_PWM 5 
 
 #define OFFSET 1500
-#define DEADZONE 20
+#define DEADZONE 55
 #define MAX_PULSE 500
-#define MAX_PWM 255
 
 void setup() {
-  // Flysky FS-i6X transmitter outputs a PWM signal on each channel, so I set those pins as inputs
-  pinMode(LAT_CH2, INPUT);
+  // Set pin modes for inputs
   pinMode(TURN_CH1, INPUT);
-  // Using a TB6612FNG motor driver, which has a direction pin and a PWM pin for each motor, so I set those as outputs
+  pinMode(FWD_CH2, INPUT);
+
+  // Set pin modes for outputs
   pinMode(R_DIR, OUTPUT);
   pinMode(R_PWM, OUTPUT);
   pinMode(L_DIR, OUTPUT);
   pinMode(L_PWM, OUTPUT);
 }
 
+/**
+ * Sets motor direction and speed based on input speed value.
+ * @param dir_pin The direction control pin for the motor.
+ * @param pwm_pin The PWM control pin for the motor.
+ * @param speed The desired speed of the motor (-MAX_PULSE to MAX_PULSE).
+ */
+void setMotor(int dir_pin, int pwm_pin, int speed) {
+  if (speed > 0) {
+    digitalWrite(dir_pin, HIGH); // Set direction forward
+  } else if (speed < 0) {
+    digitalWrite(dir_pin, LOW); // Set direction backward
+  } else {
+    analogWrite(pwm_pin, 0); // Stop motor
+    return;
+  }
+
+  // Map pulse to motor speed (0 to MAX_PULSE) to (0 to 255)
+  int pwm_value = map(abs(speed), 0, MAX_PULSE, 0, 255);
+  analogWrite(pwm_pin, pwm_value); // Set motor speed
+}
+
 void loop() {
-  // 1500us is the duration of the pulse if the stick is in the center, this allows me to map the 1000us-2000us to a -500us-500us
-  int CH2Value = constrain(pulseIn(LAT_CH2, HIGH) - OFFSET, -MAX_PULSE, MAX_PULSE);
-  int CH1Value = constrain(pulseIn(TURN_CH1, HIGH) - OFFSET, -MAX_PULSE, MAX_PULSE);
+  int fwd_value = pulseIn(FWD_CH2, HIGH, 50000) - OFFSET; // Read forward channel pulse width and apply offset
+  int turn_value = pulseIn(TURN_CH1, HIGH, 50000) - OFFSET; // Read turn channel pulse width and apply offset
 
   // Apply deadzone
-  if (abs(CH2Value) < DEADZONE) CH2Value = 0;
-  if (abs(CH1Value) < DEADZONE) CH1Value = 0;
-
-  int LAT_PWM = abs(CH2Value) * MAX_PWM / MAX_PULSE;
-  int TURN_PWM = abs(CH1Value) * MAX_PWM / MAX_PULSE;
-
-  // Set the PWM values to the motor drivers
-  analogWrite(R_PWM, TURN_PWM);
-  analogWrite(L_PWM, LAT_PWM);
-
-  // Set the direction of the motors
-  if (CH1Value > 0) {
-    digitalWrite(R_DIR, HIGH);
-  } else {
-    digitalWrite(R_DIR, LOW);
+  if (abs(fwd_value) < DEADZONE) {
+    fwd_value = 0;
+  }
+  if (abs(turn_value) < DEADZONE) {
+    turn_value = 0;
   }
 
-  if (CH2Value > 0) {
-    digitalWrite(L_DIR, HIGH);
-  } else {
-    digitalWrite(L_DIR, LOW);
-  }
+  int left_speed = fwd_value + turn_value; // Calculate left motor speed
+  int right_speed = fwd_value - turn_value; // Calculate right motor speed
+
+  // Set speeds for both motors
+  setMotor(L_DIR, L_PWM, left_speed);
+  setMotor(R_DIR, R_PWM, -right_speed);
 }
