@@ -70,13 +70,9 @@ Part Studio open hood
 ## Physical build
 
 # Planning
-First off, I'm gonna 3D print the main chassis, wheel guards, and motor mounts. This way, I'll have an idea of what the whole thing looks like.
+I have assembled majority of the frame and the motors, they are all mounted using machine screws and washers. I have also machined a polycarbonate plate that I forgot to drill a hole in for the weapon shaft. Alongside that, all the electronics are fully complete and the control systems are packed efficiently into the frame. I have yet to assemble the weapon and mount the wheels.
 
-After I have those, I'll put the heat-set inserts into the chassis, then mount the motors and the wheels.
-
-I'll wire up all the Radio and BLDC electronics, then solder the Arduino and TB6612FNG together and cram them into the itty chassis. Once I have that, I should have movement!!!
-
-Once I confirm that the chassis is good and can move well, I get to machining the aluminum! I have some plates on hand that I can mark and cut using my FRC team's miter saw and dremel. I'll also print the weapon parts.
+Once I confirm that the chassis is good and can move well, I get to machining the aluminum! I have some plates on hand that I can mark and cut using my FRC team's miter saw and dremel.
 
 Once everything has been put together, it should be fantastic!
 
@@ -84,17 +80,18 @@ Once everything has been put together, it should be fantastic!
 | Item Name       | Amount Needed | Cost to Me (USD) | On Hand |
 |-----------------|---------------|------------------|---------|
 | PLA Plastic     | ~200g         | $0.00            | Yes     |
-| Aluminum Sheet  | 1 Small Sheet | $11.00           | No      |
+| Aluminum Sheet  | 1 Small Sheet | $11.00           | Yes     |
 | M4 Hardware     | ~10 Sets      | $0.00            | Yes     |
-| M2 Hardware     | ~4 Sets       | $6.00            | No      |
-| Arduino Nano    | 1             | $13.00           | No      |
+| M2 Hardware     | ~4 Sets       | $6.00            | Yes     |
+| Arduino Nano    | 1             | $13.00           | Yes     |
 | TB6612FNG       | 2             | $0.00            | Yes     |
 | Assorted Wires  | Indeterminate | $0.00            | Yes     |
 | Wheels          | 2             | $0.00            | Yes     |
-| M3 Hardware     | ~2 Sets       | $6.00            | No      |
+| M3 Hardware     | ~2 Sets       | $6.00            | Yes     |
 | 2S LiPo Battery | 1             | $0.00            | Yes     |
 | N20 DC Motor    | 2             | $0.00            | Yes     |
 | BLDC ESC        | 1             | $0.00            | Yes     |
 | Radio RX        | 1             | $0.00            | Yes     |
 | 2200KV BLDC     | 1             | $0.00            | Yes     |
-| Total           |               | $36.00           |         |
+| Total           |               | $36.00           | All rec.|
+
