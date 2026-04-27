@@ -15,6 +15,8 @@
 #define MAX_PULSE 500
 
 void setup() {
+  Serial.begin(9600);
+
   // Set pin modes for inputs
   pinMode(TURN_CH1, INPUT);
   pinMode(FWD_CH2, INPUT);
@@ -62,7 +64,18 @@ void loop() {
   int left_speed = fwd_value + turn_value; // Calculate left motor speed
   int right_speed = fwd_value - turn_value; // Calculate right motor speed
 
-  // Set speeds for both motors
   setMotor(L_DIR, L_PWM, left_speed);
-  setMotor(R_DIR, R_PWM, -right_speed);
+  setMotor(R_DIR, R_PWM, -right_speed); // Invert right motor
+
+  // Serial output for debugging
+  Serial.print("FWD: ");
+  Serial.print(fwd_value);
+  Serial.print("\tTURN: ");
+  Serial.print(turn_value);
+  Serial.print("\tLEFT: ");
+  Serial.print(left_speed);
+  Serial.print("\tRIGHT: ");
+  Serial.println(right_speed);
+
+  delay(20); // Small delay for stability
 }
